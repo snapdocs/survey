@@ -1,22 +1,12 @@
 # Survey
 
-[![Build Status](https://travis-ci.org/runtimerevolution/survey.png?branch=master)](https://travis-ci.org/runtimerevolution/survey)
-[![Code Climate](https://codeclimate.com/github/runtimerevolution/survey.png)](https://codeclimate.com/github/runtimerevolution/survey)
 ### Surveys on Rails...
 
 Survey is a Rails Engine that brings quizzes, surveys and contests into your Rails
 application. Survey models were designed to be flexible enough in order to be extended and
 integrated with your own models. Survey was initially extracted from a real application that handles contests and quizzes.
 
-## Documentation
-
-You can view the Survey documentation in RDoc format here:
-
-http://rubydoc.info/github/runtimerevolution/survey/frames
-
-## Demo App
-
-We have implemented a demo app for you to try out: [Demo App](http://survey-demo.herokuapp.com/surveys)
+## Original Repo (unmaintained)
 
 Here is the repository: https://github.com/runtimerevolution/survey-demo
 
@@ -38,12 +28,15 @@ Then run bundle to install the Gem:
 ```sh
 bundle install
 ```
+
+## Removed functionality
 Now generate and run migrations:
 ```sh
 rails generate survey:install
 
 bundle exec rake db:migrate
 ```
+## end Removed functionality
 
 ## Getting started with Survey
 
@@ -107,8 +100,6 @@ end
 ## Survey inside your Views
 
 ### Controlling Survey availability per participant
-NOTE: avaliable_for_participant? method has been deprecated. Please use
-available_for_participant? method instead.
 
 To control which page participants see you can use method `available_for_participant?`
 that checks if the participant already spent his attempts.
@@ -140,27 +131,6 @@ that checks if the participant already spent his attempts.
 <% end -%>
 ```
 
-### Scaffolds and CRUD frameworks
-If you are using Rails Admin or Active Admin, you can generate base CRUD screens for Survey with:
-```sh
-rails generate survey active_admin
-
-rails generate survey rails_admin
-```
-If you want a simple way to get started you can use the `plain` option which is a simple Rails scaffold to generate the controller and views related with survey logic.
-By default when you type `rails g survey plain` it generates a controller in the `admin` namespace but you can choose your own namespace as well:
-```sh
-rails generate survey plain namespace:contests
-```
-
-By default when you generates your controllers using the `plain` command the task
-generates the associated routes as well.
-Afterwards if you want to generate more routes, you can using the command:
-
-```sh
-rails generate survey routes namespace:admin
-```
-
 ## How to use it
 Every user has a collection of attempts for each survey that they can respond to. Is up to you to
 make averages and collect reports based on that information.
@@ -184,17 +154,7 @@ global_highest_score = survey_answers.high_score
 ```
 # Compability
 ### Rails
-Survey supports Rails 3 and 4. For use in Rails 4. Rails 4 support is recent, so some minor issues may still be present,
-please report them.
-
-### Active Admin
-Only support versions of Active Admin higher than 0.3.1.
-
-# Roadmap
-
-- Add a form builder or a helper to improve the creation of Survey forms.
-- Add polymorphic relations to help the survey be extended with subclasses.
-- Allow adding new fields without breaking the existent logic.
+Survey supports Rails 5
 
 # License
 Copyright © 2013 [Runtime Revolution](http://www.runtime-revolution.com), released under the MIT license.

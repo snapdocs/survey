@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class SurveyTest < ActiveSupport::TestCase
-
   test "should pass if user b was the more right answers" do
     user_a = create_user
     user_b = create_user
@@ -44,5 +43,4 @@ class SurveyTest < ActiveSupport::TestCase
     assert_equal user_a, participant_with_more_wrong_answers(survey_a)
     assert_equal user_b, participant_with_more_wrong_answers(survey_b)
   end
-
 end

@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class QuestionTest < ActiveSupport::TestCase
-
   test "should create a valid question" do
     question = create_question
     should_be_persisted question
@@ -30,5 +29,4 @@ class QuestionTest < ActiveSupport::TestCase
       should_be_false question.correct_options.include?(option)
     end
   end
-
 end

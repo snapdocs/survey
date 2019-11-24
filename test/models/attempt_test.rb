@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class AttemptTest < ActiveSupport::TestCase
-
   NUMBER_OF_ATTEMPTS = 5
 
   test "should pass if the user has #{NUMBER_OF_ATTEMPTS} attempts completed" do
@@ -18,5 +17,4 @@ class AttemptTest < ActiveSupport::TestCase
     assert_not_equal (NUMBER_OF_ATTEMPTS + 1), number_of_current_attempts(user, survey)
     assert_equal NUMBER_OF_ATTEMPTS, number_of_current_attempts(user, survey)
   end
-
 end

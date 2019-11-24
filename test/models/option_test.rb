@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class OptionTest < ActiveSupport::TestCase
-
   test "should create a valid option" do
     option = create_option
     should_be_persisted option
@@ -29,8 +28,8 @@ class OptionTest < ActiveSupport::TestCase
     optionB = create_option({:correct => true})
     optionC = create_option({:correct => true, :weight => 5})
 
-    should_be_true (optionA.weight == 0)
-    should_be_true (optionB.weight == 1)
-    should_be_true (optionC.weight == 5)
+    should_be_true(optionA.weight == 0)
+    should_be_true(optionB.weight == 1)
+    should_be_true(optionC.weight == 5)
   end
 end

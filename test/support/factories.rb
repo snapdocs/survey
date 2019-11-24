@@ -36,11 +36,11 @@ def correct_option_attributes
 end
 
 def create_attempt(opts ={})
-  attempt = Survey::Attempt.create do |t|
+  Survey::Attempt.create do |t|
     t.survey = opts.fetch(:survey, nil)
     t.participant = opts.fetch(:user, nil)
     opts.fetch(:options, []).each do |option|
-        t.answers.new(:option => option, :question => option.question, :attempt => t)
+      t.answers.new(:option => option, :question => option.question, :attempt => t)
     end
   end
 end
@@ -58,7 +58,6 @@ def create_survey_with_questions(num)
 end
 
 def create_attempt_for(user, survey, opts = {})
-
   if opts.fetch(:all, :wrong) == :right
     correct_survey = survey.correct_options
     create_attempt({  :options => correct_survey,
