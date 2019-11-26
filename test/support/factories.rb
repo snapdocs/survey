@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Factories
 
 # Create a Survey::Survey

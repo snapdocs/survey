@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class SurveyTest < ActiveSupport::TestCase
   test 'should create a valid survey without questions' do
     survey = create_survey

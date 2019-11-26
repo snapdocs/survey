@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 def number_of_current_attempts(participant, survey)
   participant.for_survey(survey).size if participant.respond_to?(:for_survey)
 end
