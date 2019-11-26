@@ -29,15 +29,6 @@ Then run bundle to install the Gem:
 bundle install
 ```
 
-## Removed functionality
-Now generate and run migrations:
-```sh
-rails generate survey:install
-
-bundle exec rake db:migrate
-```
-## end Removed functionality
-
 ## Getting started with Survey
 
 ## Survey inside your models
