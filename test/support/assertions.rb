@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'active_support/test_case'
 
 module ActiveSupport
@@ -23,7 +25,7 @@ module ActiveSupport
     end
 
     def assert_not_nil(assertion)
-      should_be_true assertion != nil
+      should_be_true !assertion.nil?
     end
 
     def should_be_persisted(assertion)
