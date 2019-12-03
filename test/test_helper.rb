@@ -1,17 +1,16 @@
-  # Configure Rails Envinronment
-ENV["RAILS_ENV"] = "test"
-
-require File.expand_path("../dummy/config/environment.rb",  __FILE__)
-require "rails/test_help"
-require 'mocha/setup'
+require 'mocha/api'
 require 'faker'
 
-Rails.backtrace_cleaner.remove_silencers!
+require 'active_record'
+Dir["#{File.dirname(__FILE__)}/../app/**/*.rb"].each { |f| require f }
+load File.dirname(__FILE__) + '/../lib/survey.rb'
 
-# Run any available migration
-ActiveRecord::Migrator.migrate File.expand_path("../dummy/db/migrate/", __FILE__)
+ActiveRecord::Base.establish_connection adapter: 'sqlite3', database: ':memory:'
+
+load File.dirname(__FILE__) + '/schema.rb'
+require File.dirname(__FILE__) + '/models.rb'
 
 # Load support files
 # Add support to load paths so we can overwrite broken webrat setup
-$:.unshift File.expand_path('../support', __FILE__)
+$LOAD_PATH.unshift File.expand_path('support', __dir__)
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
