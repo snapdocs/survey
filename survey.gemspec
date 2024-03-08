@@ -11,8 +11,8 @@ Gem::Specification.new do |s|
   s.authors     = %Q{Runtime Revolution}
   s.require_paths = %w(lib)
 
-  s.add_dependency("railties", ">= 5.0", "< 7.0")
-  s.add_development_dependency("activerecord", ">= 5.0", "< 7.0")
+  s.add_dependency("railties", ">= 7.0", "< 8.0")
+  s.add_development_dependency("activerecord", ">= 7.0", "< 8.0")
   s.add_development_dependency("sqlite3")
   s.add_development_dependency("mocha")
   s.add_development_dependency("faker")
