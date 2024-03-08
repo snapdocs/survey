@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    survey (0.4)
+    survey (0.5)
       railties (>= 7.0, < 8.0)
 
 GEM
