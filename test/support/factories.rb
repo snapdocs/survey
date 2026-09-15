@@ -5,14 +5,14 @@ def create_survey(opts = {})
   Survey::Survey.create({
     name: ::Faker::Name.name,
     attempts_number: 3,
-    description: ::Faker::Lorem.paragraph(1)
+    description: ::Faker::Lorem.paragraph(sentence_count: 1)
   }.merge(opts))
 end
 
 # Create a Survey::Question
 def create_question(opts = {})
   Survey::Question.create({
-    text: ::Faker::Lorem.paragraph(1),
+    text: ::Faker::Lorem.paragraph(sentence_count: 1),
     options_attributes: { option: correct_option_attributes }
   }.merge(opts))
 end
@@ -28,7 +28,7 @@ def create_option(opts = {})
 end
 
 def option_attributes
-  { text: ::Faker::Lorem.paragraph(1) }
+  { text: ::Faker::Lorem.paragraph(sentence_count: 1) }
 end
 
 def correct_option_attributes
